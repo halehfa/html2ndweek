@@ -1,0 +1,225 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+header {
+    text-align: center;
+    padding: 25px 0 15px 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 53px;
+}
+
+main {
+    width: 90%; 
+    height: 100%;
+    margin: 0 auto;
+	/* -webkit-box-shadow: 0px 11px 5px 2px rgba(104,104,104,0.63);  */
+    box-shadow: 0px 13px 9px 9px rgb(104 104 104 / 13%);
+    display: grid;
+    grid-template-areas: "float";
+    margin-bottom: 30px;
+}  
+
+h2 {
+    text-align: center;
+    background-color: #e4e7ee;
+    padding: 16px;
+    font-size: 30px;
+    grid-area: float;
+}
+
+.grid-item:hover { 
+    font-weight: bolder;
+    border: 1px rgb(105, 105, 105) solid;
+    color: rgb(105, 105, 105);
+    transform: scale(1.05,1.05);
+    -webkit-transition: transform 1s ease-in-out;
+}
+
+.grid-item img { 
+    max-width: 200px;
+}
+
+/******* Float *******/
+
+.grid-floats {
+    list-style: none;
+    margin-left: 4%;
+}
+
+.grid-floats .grid-item {
+    padding: 10px; 
+    width: 22%;
+    height: 550px;
+    float: left;
+    overflow: auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    margin: 1%;
+    text-align: center;
+    position: relative;
+}
+
+.grid-floats :first-child {
+    width: 46%;
+}
+
+.grid-floats .grid-item h3 {
+    text-align: left;
+    font-size: 20px;
+    color: #ce2037;
+    min-height: 110px;
+    display: table-cell;
+    padding-bottom: 33px;
+}
+
+.grid-floats .grid-item p {
+    text-align: justify;
+    padding: 5px;
+    position: absolute;
+    top: 48%;
+    padding-right: 13px;
+}
+  
+
+
+/******* Flex *******/
+
+.flex-part { 
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-flex{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-flex .grid-item {
+    justify-content: flex-start;
+    flex: 0 1 22%;
+    padding: 10px; 
+    height: 550px;
+    overflow: auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    margin: 1%;
+    text-align: center;
+    position: relative;
+}
+
+.grid-flex :first-child {
+    flex: 0 1 46%;
+}
+
+.grid-flex .grid-item h3 {
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 20px;
+    color: #ce2037;
+    min-height: 110px;
+    display: table-cell;
+    padding-bottom: 33px;
+}
+
+.grid-flex .grid-item p {
+    text-align: justify;
+    padding: 5px;
+    position: absolute;
+    top: 48%;
+    padding-right: 13px;
+}
+
+/******* Media *******/
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+
+    /******* Float *******/
+
+    .grid-floats {
+        margin-left: 1.5%;
+    }
+    .grid-floats .grid-item {
+        padding: 10px; 
+        width: 32%;
+        min-height: 700px;
+        margin: 0.5%; 
+    }
+
+    .grid-floats :first-child {
+        width: 65%;
+    }
+
+    /******* Flex *******/ 
+
+    .flex-part { 
+        flex-direction: column;
+    }
+
+    .grid-flex .grid-item { 
+        min-height: 700px;
+        min-width: 30%;
+        flex: 0 1 30%; 
+    }
+
+    .grid-flex :first-child {
+        flex: 0 1 62%;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    /******* Float *******/
+
+    .grid-floats {
+        margin: 0;
+    }
+    .grid-floats .grid-item {
+        padding: 20px; 
+        width: 100%;
+        min-height: 360px;
+    } 
+
+    .grid-floats .grid-item p{
+        padding: 20px 40px 20px 20px;
+        position: absolute;
+        top: 55%; 
+    } 
+
+
+    /******* Flex *******/ 
+    
+    .flex-part { 
+        display: flex;
+    }
+
+    .grid-flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .grid-flex .grid-item { 
+        padding: 20px; 
+        flex: 0 0 100%; 
+        min-height: 300px;
+    }
+
+    .grid-flex .grid-item p{
+        padding: 20px 40px 20px 20px;
+        position: absolute;
+        top: 55%; 
+    } 
+ 
+}
